@@ -1,5 +1,6 @@
 package main.java.com.github.marcellodesales.advanced.records;
 
+import main.java.com.github.marcellodesales.advanced.records.customer.Customer;
 import main.java.com.github.marcellodesales.advanced.util.Validator;
 
 import java.time.LocalDateTime;
@@ -8,8 +9,16 @@ import java.util.List;
 /**
  * Records must be immutable collections must pass an immutable array
  *
+ * Product (1) <- OrderLines (n) <- Order -> (1) Customer
+ *
+ * It's a good Domain Object, however, Records cannot be used for Database (JPA entity classes must be mutable)
+ * From the Data Access Layer, use JPA classes, but map them to Records in the Business Layer.
+ *
+ * Also Value objects just like String, etc etc... Value Object vs Entity doesn't have an identity.
+ * 3 == 3, Customer(Marcello) != Customer(Marcello)
+ *
  */
-public record Order(long id, LocalDateTime when, List<OrderLine> lines) {
+public record Order(long id, Customer customer, LocalDateTime when, List<OrderLine> lines) {
 
     /**
      * Also validates the immutablility.

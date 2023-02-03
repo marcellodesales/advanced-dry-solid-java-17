@@ -1,9 +1,10 @@
 package main.java.com.github.marcellodesales.advanced;
 
-import main.java.com.github.marcellodesales.advanced.records.Customer;
+import main.java.com.github.marcellodesales.advanced.records.customer.Customer;
 import main.java.com.github.marcellodesales.advanced.records.Order;
 import main.java.com.github.marcellodesales.advanced.records.OrderLine;
 import main.java.com.github.marcellodesales.advanced.records.Product;
+import main.java.com.github.marcellodesales.advanced.records.customer.FamilyName;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -19,8 +20,8 @@ public class Application {
     }
 
     private static Customer makeNewCustomer() {
-        var newCustomer = new Customer(23, "Marcello", "DeSales");
-        var newCustomerLater = new Customer(23, "Marcello", "DeSales");
+        var newCustomer = new Customer(23, new FamilyName("Marcello", "DeSales"));
+        var newCustomerLater = new Customer(23, new FamilyName("Marcello", "DeSales"));
         if (newCustomer == newCustomerLater) {
             System.out.println("Customers points to the same object");
         }
@@ -34,13 +35,16 @@ public class Application {
         return new OrderLine(makeNewProduct(), 4, new BigDecimal("5.43"));
     }
 
+    /**
+     * @return Product (1) <- OrderLines (n) <- Order -> (1) Customer
+     */
     public static Order makeNewOrder() {
         var orderLines = Arrays.asList(
                 newOrderLine(),
                 new OrderLine(new Product(4, "Monitor", "Wide"), 5,
                         new BigDecimal("548.33"))
         );
-        var newOrder = new Order(120, LocalDateTime.now(), orderLines);
+        var newOrder = new Order(120, makeNewCustomer(), LocalDateTime.now(), orderLines);
         System.out.println("Created the order: " + newOrder);
         return newOrder;
     }
