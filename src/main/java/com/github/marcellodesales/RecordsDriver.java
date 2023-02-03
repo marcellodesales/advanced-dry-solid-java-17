@@ -1,4 +1,4 @@
-package main.java.com.github.marcellodesales.advanced;
+package main.java.com.github.marcellodesales;
 
 import main.java.com.github.marcellodesales.advanced.records.customer.Customer;
 import main.java.com.github.marcellodesales.advanced.records.Order;
@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 
-public class Application {
+public class RecordsDriver {
 
     private static Product makeNewProduct() {
         // we can use the var for the object
