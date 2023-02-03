@@ -4,7 +4,7 @@ import main.java.com.github.marcellodesales.advanced.util.Validator;
 
 import java.math.BigDecimal;
 
-public record OrderLine(ProductRecord product, int quantity, BigDecimal price) {
+public record OrderLine(Product product, int quantity, BigDecimal price) {
 
     /**
      * Compact constructor without repeating the parameters.
@@ -24,7 +24,7 @@ public record OrderLine(ProductRecord product, int quantity, BigDecimal price) {
      * @param product
      * @param quantity
      */
-    public OrderLine(ProductRecord product, int quantity) {
+    public OrderLine(Product product, int quantity) {
         // this call must be called as the first call in the constructor.
         this(product, quantity, new BigDecimal("0.0"));
     }

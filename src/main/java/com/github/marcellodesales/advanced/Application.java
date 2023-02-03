@@ -1,9 +1,9 @@
 package main.java.com.github.marcellodesales.advanced;
 
-import main.java.com.github.marcellodesales.advanced.records.CustomerRecord;
+import main.java.com.github.marcellodesales.advanced.records.Customer;
 import main.java.com.github.marcellodesales.advanced.records.Order;
 import main.java.com.github.marcellodesales.advanced.records.OrderLine;
-import main.java.com.github.marcellodesales.advanced.records.ProductRecord;
+import main.java.com.github.marcellodesales.advanced.records.Product;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -11,16 +11,16 @@ import java.util.Arrays;
 
 public class Application {
 
-    private static ProductRecord makeNewProduct() {
+    private static Product makeNewProduct() {
         // we can use the var for the object
-        var computer = new ProductRecord(1, "computer", "Super awesome product");
+        var computer = new Product(1, "computer", "Super awesome product");
         System.out.println("Created " + computer);
         return computer;
     }
 
-    private static CustomerRecord makeNewCustomer() {
-        var newCustomer = new CustomerRecord(23, "Marcello", "DeSales");
-        var newCustomerLater = new CustomerRecord(23, "Marcello", "DeSales");
+    private static Customer makeNewCustomer() {
+        var newCustomer = new Customer(23, "Marcello", "DeSales");
+        var newCustomerLater = new Customer(23, "Marcello", "DeSales");
         if (newCustomer == newCustomerLater) {
             System.out.println("Customers points to the same object");
         }
@@ -37,7 +37,7 @@ public class Application {
     public static Order makeNewOrder() {
         var orderLines = Arrays.asList(
                 newOrderLine(),
-                new OrderLine(new ProductRecord(4, "Monitor", "Wide"), 5,
+                new OrderLine(new Product(4, "Monitor", "Wide"), 5,
                         new BigDecimal("548.33"))
         );
         var newOrder = new Order(120, LocalDateTime.now(), orderLines);

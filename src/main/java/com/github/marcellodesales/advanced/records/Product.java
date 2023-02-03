@@ -18,7 +18,7 @@ package main.java.com.github.marcellodesales.advanced.records;
  *
  * Constructor is called "Canonical Constructor", initializes the records to have its own. Make defensive and validation
  */
-public record ProductRecord(long id, String name, String description) {
+public record Product(long id, String name, String description) {
 
     // the compiler translates this to the Java Immutable class Pattern: final class, private final encapsulation of
     // properties, constructor params, just getters,
