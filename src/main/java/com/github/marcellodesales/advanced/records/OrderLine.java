@@ -1,6 +1,6 @@
 package main.java.com.github.marcellodesales.advanced.records;
 
-import main.java.com.github.marcellodesales.advanced.util.Validator;
+import main.java.com.github.marcellodesales.util.Validator;
 
 import java.math.BigDecimal;
 
