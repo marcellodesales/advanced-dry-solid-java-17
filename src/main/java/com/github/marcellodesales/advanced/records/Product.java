@@ -1,5 +1,7 @@
 package main.java.com.github.marcellodesales.advanced.records;
 
+import main.java.com.github.marcellodesales.advanced.records.customer.FamilyName;
+
 /**
  * String
  * BitInteger, BigDecimal
@@ -56,5 +58,41 @@ public record Product(long id, String name, String description) {
         builder.append(SIGNATURE_SPLITTER);
         builder.append(this.description);
         return builder.toString();
+    }
+
+    /**
+     * TODO: We can use Lombok for these:
+     * @return an instance of the builder method as a fluid API
+     */
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    /**
+     * Fluid API for the Product
+     */
+    public static class Builder {
+        private long id;
+        private String name;
+        private String description;
+
+        public Builder withId(long id) {
+            this.id = id;
+            return this;
+        }
+
+        public Builder withName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public Builder withDescription(String description) {
+            this.description = description;
+            return this;
+        }
+
+        public Product build() {
+            return new Product(this.id, this.name, this.description);
+        }
     }
 }

@@ -39,10 +39,17 @@ public class Application {
      * @return Product (1) <- OrderLines (n) <- Order -> (1) Customer
      */
     public static Order makeNewOrder() {
+        // better creating the builder.
+        var fluidProduct= Product.builder()
+                .withId(10)
+                .withName("Monitor")
+                .withDescription("Wiper great")
+                .build();
+        System.out.println("Fluid monitor: " + fluidProduct);
+
         var orderLines = Arrays.asList(
                 newOrderLine(),
-                new OrderLine(new Product(4, "Monitor", "Wide"), 5,
-                        new BigDecimal("548.33"))
+                new OrderLine(fluidProduct, 5, new BigDecimal("548.33"))
         );
         var newOrder = new Order(120, makeNewCustomer(), LocalDateTime.now(), orderLines);
         System.out.println("Created the order: " + newOrder);
