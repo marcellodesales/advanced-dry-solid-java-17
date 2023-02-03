@@ -23,6 +23,20 @@ public class AlgebricDataTypesDriver {
         return total;
     }
 
+    public static Double calculateAmount(AlgebricOrder order) {
+        var total = 0d;
+        for (SealedOrderLine orderLine : order.orderLines()) {
+            // https://docs.oracle.com/en/java/javase/17/language/pattern-matching-switch-expressions-and-statements.html
+            // ATTENTION: You must accept the terms of legal notice of the beta Java specification to enable support
+            // for "17 (Preview) - Pattern matching for switch".
+            total += switch (orderLine) {
+                case SaleOrderLine s -> s.quantity() * s.amount().doubleValue();
+                case DiscountOrderLine d -> d.amount().doubleValue() * -1;
+            };
+        }
+        return total;
+    }
+
     public static void main(String[] args) {
 
         var monitor = Product.builder()
@@ -37,5 +51,6 @@ public class AlgebricDataTypesDriver {
         ));
 
         System.out.println("Total value of order: " + calculateTotalAmount(myOrder));
+        System.out.println("Total from switch: " + calculateAmount(myOrder));
     }
 }
