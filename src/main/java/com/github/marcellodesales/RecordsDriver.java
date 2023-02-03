@@ -1,10 +1,10 @@
-package main.java.com.github.marcellodesales;
+package com.github.marcellodesales;
 
-import main.java.com.github.marcellodesales.advanced.records.customer.Customer;
-import main.java.com.github.marcellodesales.advanced.records.Order;
-import main.java.com.github.marcellodesales.advanced.records.OrderLine;
-import main.java.com.github.marcellodesales.advanced.records.Product;
-import main.java.com.github.marcellodesales.advanced.records.customer.FamilyName;
+import com.github.marcellodesales.advanced.records.customer.Customer;
+import com.github.marcellodesales.advanced.records.Order;
+import com.github.marcellodesales.advanced.records.OrderLine;
+import com.github.marcellodesales.advanced.records.Product;
+import com.github.marcellodesales.advanced.records.customer.FamilyName;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

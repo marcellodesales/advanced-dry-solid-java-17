@@ -1,4 +1,4 @@
-package main.java.com.github.marcellodesales.util;
+package com.github.marcellodesales.util;
 
 public final class Validator<T> {
 

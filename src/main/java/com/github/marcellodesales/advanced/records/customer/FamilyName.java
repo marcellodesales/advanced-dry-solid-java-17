@@ -1,6 +1,6 @@
-package main.java.com.github.marcellodesales.advanced.records.customer;
+package com.github.marcellodesales.advanced.records.customer;
 
-import main.java.com.github.marcellodesales.util.Validator;
+import com.github.marcellodesales.util.Validator;
 
 /**
  * Value objects just holds better object representation of immutable values.

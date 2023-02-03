@@ -1,6 +1,6 @@
-package main.java.com.github.marcellodesales.advanced.records;
+package com.github.marcellodesales.advanced.records;
 
-import main.java.com.github.marcellodesales.advanced.records.customer.FamilyName;
+import com.github.marcellodesales.advanced.records.customer.FamilyName;
 
 /**
  * String

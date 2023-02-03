@@ -1,4 +1,4 @@
-package main.java.com.github.marcellodesales.advanced.records.customer;
+package com.github.marcellodesales.advanced.records.customer;
 
 import java.time.LocalDateTime;
 
