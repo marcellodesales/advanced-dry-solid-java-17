@@ -1,4 +1,4 @@
-package com.github.marcellodesales.advanced.generics;
+package com.github.marcellodesales.advanced.generics.tree;
 
 public record MaxValueInnerNode<T extends Comparable>(ComparableTreeNode<T> left, ComparableTreeNode<T> right) implements ComparableTreeNode<T> {
 

@@ -1,9 +1,18 @@
-package com.github.marcellodesales.advanced.generics;
+package com.github.marcellodesales.advanced.generics.tree;
 
 import java.util.Collections;
 
-public record InnerNodeRecord<T>(T value, TreeNode<T> left,
-                                 TreeNode<T> right) implements TreeNode<T> {
+public class InnerNode<T> implements TreeNode<T> {
+
+    private final TreeNode<T> left;
+    private final TreeNode<T> right;
+    private final T value;
+
+    public InnerNode(T value, TreeNode<T> left, TreeNode<T> right) {
+        this.value = value;
+        this.left = left;
+        this.right = right;
+    }
 
     @Override
     public TreeNode<T> getLeft() {

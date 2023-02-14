@@ -1,12 +1,6 @@
-package com.github.marcellodesales.advanced.generics;
+package com.github.marcellodesales.advanced.generics.tree;
 
-public class LeafNode<T> implements TreeNode<T> {
-
-    private final T value;
-
-    public LeafNode(T value) {
-        this.value = value;
-    }
+public record LeafNodeRecord<T>(T value) implements TreeNode<T> {
 
     @Override
     public T getValue() {
@@ -31,11 +25,11 @@ public class LeafNode<T> implements TreeNode<T> {
     }
 
     public static void main(String[] args) {
-        var three = new LeafNode<Integer>(3);
+        var three = new LeafNodeRecord<Integer>(3);
         // with type inference.
-        var five = new LeafNode<>(5);
-        var binaryTree = new InnerNode<>(10, five, three);
+        var five = new LeafNodeRecord<>(5);
+        var binTree = new InnerNode<>(10, five, three);
 
-        System.out.println(binaryTree);
+        System.out.println(binTree);
     }
 }

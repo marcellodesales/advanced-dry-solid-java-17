@@ -1,4 +1,4 @@
-package com.github.marcellodesales.advanced.generics;
+package com.github.marcellodesales.advanced.generics.tree;
 
 public class LeafNodeCompatible<T extends Comparable> implements ComparableTreeNode<T> {
 

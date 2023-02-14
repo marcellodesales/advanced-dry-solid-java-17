@@ -1,4 +1,4 @@
-package com.github.marcellodesales.advanced.generics;
+package com.github.marcellodesales.advanced.generics.tree;
 
 /**
  * The tree node, with restrictions
