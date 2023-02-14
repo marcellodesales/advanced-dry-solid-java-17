@@ -1,10 +1,10 @@
 package com.github.marcellodesales.advanced.generics;
 
-public class LeafNode<T> implements TreeNode<T> {
+public class LeafNodeCompatible<T extends Comparable> implements ComparableTreeNode<T> {
 
     private final T value;
 
-    public LeafNode(T value) {
+    public LeafNodeCompatible(T value) {
         this.value = value;
     }
 
@@ -14,12 +14,12 @@ public class LeafNode<T> implements TreeNode<T> {
     }
 
     @Override
-    public TreeNode<T> getLeft() {
+    public ComparableTreeNode<T> getLeft() {
         return null;
     }
 
     @Override
-    public TreeNode<T> getRight() {
+    public ComparableTreeNode<T> getRight() {
         return null;
     }
 
@@ -31,11 +31,9 @@ public class LeafNode<T> implements TreeNode<T> {
     }
 
     public static void main(String[] args) {
-        var three = new LeafNode<Integer>(3);
+        var three = new LeafNodeCompatible<Integer>(3);
         // with type inference.
-        var five = new LeafNode<>(5);
-        var binaryTree = new InnerNode<>(10, five, three);
+        var five = new LeafNodeCompatible<>(5);
 
-        System.out.println(binaryTree);
     }
 }

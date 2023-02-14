@@ -2,6 +2,18 @@ package com.github.marcellodesales.advanced.generics;
 
 import java.util.function.BiFunction;
 
+/**
+ * Generic types can using single capital letter names for type parameters
+ * are widely accepted convention
+ * You can not use primitive types as type arguments
+ * Anonymous inner classes, enums and exception classes cannot have type parameters
+ *
+ * Generic Data Structures
+ * Code Reuse
+ *
+ * @param <T>
+ * @param <U>
+ */
 public record Pair<T, U>(T first, U second) {
 
     /**
