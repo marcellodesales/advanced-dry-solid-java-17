@@ -1,5 +1,6 @@
 package com.github.marcellodesales.advanced.generics.wildcards;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -81,5 +82,21 @@ public class StreamFlatMapAndTypeErasure {
         // Cannot overload methods with the same method signature after type erasure
         // void print(List<String> strings) and void print(List<Integer> ints) because
         // void print(List strings) and void print(List ints) will be the result of the erasure
+
+        // Heap pollution with the type you are casting doesn't contain what you need
+
+        List dogs = new ArrayList<>();
+        dogs.add(new Dog("days"));
+        dogs.add(new Dog("day1s"));
+
+        // this is ok
+        List<Cat> cats = dogs;
+        Cat cat = cats.get(0); // ClassCastException is heap pollution
+
+        List<? extends Animal> animals = dogs;
+        List<Dog> dogsAgain = (List<Dog>)animals; // casting to a non-reifiable type "unchecked warning
+        List<Cat> catsAgain = (List<Cat>)animals; // "unchecked" earning and heap pollution
+
+
     }
 }
