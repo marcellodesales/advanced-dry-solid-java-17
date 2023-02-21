@@ -1,4 +1,4 @@
-package com.github.marcellodesales;
+package com.github.marcellodesales.advanced.algebricdatatype;
 
 import com.github.marcellodesales.advanced.algebricdatatype.*;
 import com.github.marcellodesales.advanced.records.Product;

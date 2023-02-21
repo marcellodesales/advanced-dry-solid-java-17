@@ -1,4 +1,4 @@
-package com.github.marcellodesales;
+package com.github.marcellodesales.advanced.records;
 
 import com.github.marcellodesales.advanced.records.customer.Customer;
 import com.github.marcellodesales.advanced.records.Order;
