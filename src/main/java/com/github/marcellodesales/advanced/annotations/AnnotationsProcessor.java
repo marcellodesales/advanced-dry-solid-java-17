@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 
 public class AnnotationsProcessor {
 
+    // https://www.baeldung.com/java-find-all-classes-in-package#1-system-class-loader
     private static Set<Class> findClassNames(String packageName) {
         var inputStream = ClassLoader.getSystemClassLoader().getResourceAsStream(
                 packageName.replaceAll("[.]", "/"));
