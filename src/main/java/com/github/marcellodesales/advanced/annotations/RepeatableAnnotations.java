@@ -41,8 +41,8 @@ class NonRepeatableLoginCommand {}
 /**
  * After Java 8, with @Repeatable, we can repeat the annotations without specifying
  */
-@SuperCommand("Login first")
-@SuperCommand("Then, create this")
+@SuperCommand(value = "Login first", order = 10)
+@SuperCommand(value = "Then, create this", order = 3)
 public class RepeatableAnnotations {
 
 }
