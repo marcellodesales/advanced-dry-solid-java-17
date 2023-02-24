@@ -6,6 +6,7 @@ import java.util.List;
  * Created to format the output of the targets, as the class' responsibility is to do just that.
  */
 public class CoordinateOutputFormatter {
+
     private boolean latFirst;
 
     public CoordinateOutputFormatter(boolean latFirst) {
