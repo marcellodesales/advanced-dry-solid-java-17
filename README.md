@@ -1,4 +1,4 @@
-# Advanced Java 17
+# Advanced DRY and SOLID Java 17
 
 Advanced topics in Java 17
 
