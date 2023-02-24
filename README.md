@@ -36,7 +36,7 @@ Advanced topics in Java 17
 
 # Solid Principes
 
-> **CODE EXAMPLES**: https://github.com/dangeabunea/pluralsight-refactoring-solid-java17
+> **CODE EXAMPLES**: https://github.com/marcellodesales/pluralsight-refactoring-solid-java17
 
 * Single Responsibility Principle
 * Open-close Principle
